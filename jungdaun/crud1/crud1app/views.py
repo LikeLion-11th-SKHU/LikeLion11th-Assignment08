@@ -15,8 +15,8 @@ def create(request):
     blog.pub_date = timezone.now()
     blog.body = request.POST['body']
     blog.body = request.POST['username']
-    blog.body = request.POST['useremail']
-    blog.body = request.POST['userword']
+    boolean_value = request.POST.get('boolean', False) == 'True'
+    blog.body = boolean_value
     blog.save()
     return redirect('read')
 
@@ -38,8 +38,8 @@ def update(request, id):
     update_blog.pub_date = timezone.now()
     update_blog.body = request.POST['body']
     update_blog.body = request.POST['username']
-    update_blog.body = request.POST['useremail']
-    update_blog.body = request.POST['userword']
+    boolean_value = request.POST.get('boolean', False) == 'True'
+    update_blog.body = boolean_value
     update_blog.save()
     return redirect('read') 
 

@@ -6,9 +6,9 @@
 
 {% block content %}
     <h1>Read Page</h1>
-    <hr>  
+    <hr>   
     {% for blogs in blogs %}
-        <h3><a href="{% url 'detail' blogs.id %}">{{ blogs.title }}</a></h3>
+        <h3><a href="{% url 'blog_detail' blogs.title %}">{{ blogs.title }}</a></h3>
         <p>{{ blogs.pub_date }}</p>
         <p>{{ blogs.body }}</p>
         <p>{{ blogs.username }}</p>
