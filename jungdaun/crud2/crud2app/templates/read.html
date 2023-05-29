@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    <title>Read</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Read Page</h1>
+    <hr>   
+    {% for blogs in blogs %}
+        <h3><a href="{% url 'blog_detail' blogs.title %}">{{ blogs.title }}</a></h3>
+        <p>{{ blogs.pub_date }}</p>
+        <p>{{ blogs.body }}</p>
+        <p>{{ blogs.username }}</p>
+        <p>{{ blogs.useremail }}</p>
+        <p>{{ blogs.userword }}</p>
+    {% endfor %}
+{% endblock %}
