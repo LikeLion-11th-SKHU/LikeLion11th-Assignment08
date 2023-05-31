@@ -24,14 +24,7 @@ def read(request):
     blogs = Blog.objects.all()
     return render(request, 'read.html', {'blogs': blogs})
 
-def detail(request, id):
-    blog = get_object_or_404(Blog, id=id)
-    return render(request, 'detail.html', {'blog': blog, 'id': id})
-
-
-
-
-
-
-
+def detail(request, title):
+    blog = get_object_or_404(Blog, title=title)
+    return render(request, 'detail.html', {'blog': blog, 'title': title})
 

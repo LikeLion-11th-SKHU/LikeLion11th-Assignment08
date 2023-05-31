@@ -23,5 +23,5 @@ urlpatterns = [
     path('', crudapp.views.index, name = 'index'),
     path('create/', crudapp.views.create, name = 'create'),
     path('read/', crudapp.views.read, name = 'read'),
-    path('detail/<int:id>/', crudapp.views.detail, name='detail'),
+    path('detail/<str:title>/', crudapp.views.detail, name='detail'),
 ]
