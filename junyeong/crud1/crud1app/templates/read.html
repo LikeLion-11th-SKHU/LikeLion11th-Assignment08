@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}
+<title>Read</title>
+{% endblock %}
+
+{% block content %}
+<h1>Read Page</h1>
+<hr>
+{% for post in posts.all %}
+<h3><a href="{% url 'detail' post.id %}">{{post.title}}</a></h3>
+<p>{{post.pub_date}}</p>
+<p>{{post.body}}</p>
+<p>{{post.user_name}}</p>
+<p>{{post.email}}</p>
+{% endfor %}
+{% endblock %}
