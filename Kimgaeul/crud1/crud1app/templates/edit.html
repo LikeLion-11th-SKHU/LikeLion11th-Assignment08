@@ -11,6 +11,7 @@
         {% csrf_token %}
         제목 : <input type="text" name="title" value="{{ edit_blog.title }}"><br>
         본문 : <textarea name="body" cols="30" rows="10"></textarea>
+        작성자 : <input type="text" name="gaeul"> <br>
         <button type = "submit">작성</button>
     </form>
 {% endblock %}
