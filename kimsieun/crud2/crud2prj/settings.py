@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'crud2project.urls'
+ROOT_URLCONF = 'crud2prj.urls'
 
 TEMPLATES = [
     {
@@ -82,7 +82,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'crud2project.wsgi.application'
+WSGI_APPLICATION = 'crud2prj.wsgi.application'
 
 
 # Database
