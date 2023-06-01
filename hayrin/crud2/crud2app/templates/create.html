@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block title %}
+ <title>New</title>
+{% endblock %}
+
+{% block content %}
+ <h1>New page</h1>
+ <hr>
+ <form method="POST">
+   {% csrf_token %}
+   <table>
+       {{ form.as_table }}
+   </table>
+   <button type = "submit" >입력 </button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block title %}
+ <title>Edit</title>
+{% endblock %}
+
+{% block content %}
+ <h1>Edit Page</h1>
+ <hr>
+ <form method="POST" action="{% url 'update' edit_posts.title %}">
+    {% csrf_token %}
+    제목 : <input type="text" name="title" value = "{{ edit_posts.title }}"><br>
+    작성자 : <input type="text" name="name" value = "{{ edit_posts.name }}"><br>
+    본문 : <textarea name="content" cols="30" rows="10">{{ edit_posts.content }}</textarea><br>
+    <button type = "submit">작성</button>
+ </form>
+{% endblock %}

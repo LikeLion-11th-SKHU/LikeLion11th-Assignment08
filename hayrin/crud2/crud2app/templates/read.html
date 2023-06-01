@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block title %}
+<title>read</title>
+{% endblock %}
+
+{% block content %}
+<h1>Read Page</h1>
+<hr>
+{% for posts in posts.all %}
+<h3><a href="{% url 'detail' posts.title %}">{{ posts.title }}</a></h3>
+<p>글 제목:{{ posts.title }}</p>
+<p>글 내용:{{ posts.content }}</p>
+<p>작성자:{{ posts.name }}</p>
+<p>작성시간:{{ posts.create_time }}</p>
+{% endfor %}
+{% endblock %}
