@@ -27,6 +27,6 @@ urlpatterns = [
     path('detail/<str:title>/', crud1app.views.detail,name='detail'),
     path('edit/<str:title>/', crud1app.views.edit,name='edit'),
     path('update/<str:title>/', crud1app.views.update,name='update'),
-    path('delete/<str:title>/', crud1app.views.delete,name='delete'),
+    path('delete/<int:id>/', crud1app.views.delete,name='delete'),
 
 ]

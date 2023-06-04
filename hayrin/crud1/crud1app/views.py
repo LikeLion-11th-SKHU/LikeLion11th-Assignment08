@@ -39,7 +39,7 @@ def update(request, title):
     update_post.save()
     return redirect('read')
 
-def delete(request, tilte):
-    delete_post = get_object_or_404(Post, tilte=tilte)
+def delete(request, id):
+    delete_post = get_object_or_404(Post, id=id)
     delete_post.delete()
     return redirect('read')
