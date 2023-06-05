@@ -35,7 +35,6 @@ def get_secret(setting, secrets = secrets):
         raise ImproperlyConfigured(error_msg)
     
 SECRET_KEY = get_secret("SECRET_KEY")
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -51,6 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crud2app.apps.Crud2AppConfig'
 ]
 
 MIDDLEWARE = [

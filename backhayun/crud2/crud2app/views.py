@@ -24,12 +24,12 @@ def read(request):
     posts = Post.objects.all()
     return render(request, 'read.html', {'posts': posts})
 
-def detail(request, id):
-    post = get_object_or_404(Post, id = id)
+def detail(request, title):
+    post = get_object_or_404(Post, title = title)
     return render(request, 'detail.html', {'post': post})
 
-def update(request, id):
-    blog = get_object_or_404(Post, id = id)
+def update(request, title):
+    post = get_object_or_404(Post, title = title)
     if request.method == 'POST':
         form = PostForm(request.POST, instance = post)
         if form.is_valid():
@@ -41,7 +41,7 @@ def update(request, id):
         form = PostForm(instance = post)
         return render(request, 'update.html', {'form': form})
     
-def delete(request, id):
-    post = get_object_or_404(Post, id = id)
+def delete(request, title):
+    post = get_object_or_404(Post, title = title)
     post.delete()
     return redirect('read')

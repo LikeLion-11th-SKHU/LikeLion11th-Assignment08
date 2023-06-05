@@ -17,14 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import crud2app.views
-from crud2app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', crud2app.views.index, name = 'index'),
     path('create/', crud2app.views.create, name = 'create'),
     path('read/', crud2app.views.read, name = 'read'),
-    path('detail/<str:id>/', crud2app.views.detail, name = 'detail'),
-    path('update/<str:id>/', crud2app.views.update, name = 'update'),
-    path('delete/<str:id>/', crud2app.views.delete, name = 'delete'),    
+    path('detail/<str:title>/', crud2app.views.detail, name = 'detail'),
+    path('update/<str:title>/', crud2app.views.update, name = 'update'),
+    path('delete/<str:title>/', crud2app.views.delete, name = 'delete'),
 ]

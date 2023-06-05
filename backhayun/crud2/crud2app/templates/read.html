@@ -8,10 +8,10 @@
     <h1>Read Page</h1>
     <hr>
     {% for posts in posts %}
-        <h3><a href="{% url 'detail' posts.id %}">{{ posts.title }}</a></h3>
+        <h3><a href="{% url 'detail' posts.title %}">{{ posts.title }}</a></h3>
         <p>{{ posts.pub_date }}</p>
         <p>{{ posts.body }}</p>
         <p>{{ posts.author }}</p>
-        <p>{{ posts.url }}</p>
+        <p>{{ posts.age }}</p>
     {% endfor %}
 {% endblock %}

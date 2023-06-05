@@ -7,7 +7,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField('data published')
     body = models.TextField()
     author = models.CharField(max_length=20)
-    url = models.URLField()
+    age = models.PositiveIntegerField(help_text="User Age")
 
     def __str__(self):
         return self.title
