@@ -7,7 +7,8 @@ class Post(models.Model) :
     pub_date = models.DateTimeField('data published')
     body = models.TextField()
     user = models.CharField(max_length=20, default='')
-    age = models.PositiveIntegerField(help_text="User Age", blank=False, null=False)
+    age = models.IntegerField(default=0)
+
 
 
     def __str__(self) :

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'index02.html' %}
 
 {% block title %}
     <title>Deetail</title>
@@ -13,7 +13,7 @@
     <p>{{ blog.user }}</p>
     <p>{{blog.age}}</p>
     <br>
-    <a href="{% url 'update' blog.id %}">글 수정하기</a>
+    <a href="{% url 'update02' blog.title %}">글 수정하기</a>
     <br>
-    <a href="{% url 'delete' blog.id %}">글 삭제하기</a>
+    <a href="{% url 'delete02' blog.title %}">글 삭제하기</a>
 {% endblock %}

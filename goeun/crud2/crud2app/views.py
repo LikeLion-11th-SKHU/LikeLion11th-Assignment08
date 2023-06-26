@@ -5,45 +5,44 @@ from .models import Post
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'index.html')
+def index02(request):
+    return render(request, 'index02.html')
 
 def create(request):
-    if request.method == 'POST':
+    if request.method == 'POST' :
         form = PostForm(request.POST)
         if form.is_valid():
-            form = form.save(commit= False)
+            form = form.save(commit = False)
             form.pub_date = timezone.now()
             form.save()
-            return redirect('read')
+            return redirect('read02')
     else:
         form = PostForm
-        return render(request, 'create.html', {'form': form})
+        return render(request, 'create.html',{'form':form})
 
-def read(request) :
+def read02(request) :
     blogs = Post.objects.all()
-    return render(request, 'read.html', {'blogs': blogs})
+    return render(request, 'read02.html', {'blogs': blogs})
 
-def detail(request,id) :
-    blog = get_object_or_404(Post, id = id)
-    return render(request, 'detail.html', {'blog':blog})
+def detail02(request,title) :
+    blog = get_object_or_404(Post, title = title)
+    return render(request, 'detail02.html', {'blog':blog})
 
 
-def update(request,id) :
-    blog = get_object_or_404(Post, id =id) 
+def update02(request,title) :
+    blog = get_object_or_404(Post, title =title) 
     if request.method == 'POST' :
         form = PostForm(request.POST, instance = blog)
         if form.is_valid():
             form = form.save(commit=False)
             form.pub_date =timezone.now()
             form.save()
-            return redirect('read')
-        
+            return redirect('read02')       
     else:
         form = PostForm(instance = blog)
-        return render(request, 'update.html',{'form':form})
+        return render(request, 'update02.html',{'form':form})
 
-def delete(request, id) :
-    blog = get_object_or_404(Post, id =id) 
+def delete02(request, title) :
+    blog = get_object_or_404(Post, title =title) 
     blog.delete()
-    return redirect('read')
+    return redirect('read02')

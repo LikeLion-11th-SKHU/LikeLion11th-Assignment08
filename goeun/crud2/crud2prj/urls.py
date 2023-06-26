@@ -20,11 +20,11 @@ import crud2app.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',crud2app.views.index, name ='index'),
+    path('',crud2app.views.index02, name ='index02'),
     path('create/',crud2app.views.create, name = 'create'),
-    path('read/',crud2app.views.read, name = 'read'),
-    path('detail/<str:id>/',crud2app.views.detail, name = 'detail'),
+    path('read02/',crud2app.views.read02, name = 'read02'),
+    path('detail02/<str:title>/',crud2app.views.detail02, name = 'detail02'),
 
-    path('update/<str:id>/',crud2app.views.update, name = 'update'),
-    path('delete/<str:id>/',crud2app.views.delete, name ='delete'),
+    path('update02/<str:title>/',crud2app.views.update02, name = 'update02'),
+    path('delete02/<str:title>/',crud2app.views.delete02, name ='delete02'),
 ]

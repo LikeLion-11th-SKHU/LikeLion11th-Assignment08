@@ -25,4 +25,9 @@ urlpatterns = [
     path('new/create/', crud1app.views.create, name='create'),
     path('read/',crud1app.views.read, name= 'read'),
     path('detail/<int:id>/',crud1app.views.detail, name= 'detail'),
+
+    #UD
+    path('edit/<int:id>/',crud1app.views.edit, name='edit'),
+    path('update/<int:id>/',crud1app.views.update, name='update'),
+    path('delete/<int:id>/',crud1app.views.delete, name='delete'),
 ]

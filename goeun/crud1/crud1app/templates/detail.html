@@ -12,4 +12,8 @@
     <p>{{blog.body}}</p> 
     <p>{{ blog.user }}</p>  
     <p>{{blog.email}}</p>
+    <br>
+    <a href="{% url 'edit' blog.id %}">글 수정하기</a>
+    <br>
+    <a href="{% url 'delete' blog.id %}">글 삭제하기</a>
 {% endblock %}
