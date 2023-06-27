@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'index02.html' %}
 
 {% block title %}
     <title>Read</title>
@@ -8,11 +8,11 @@
     <h1>Read Page</h1>
     <hr>
     {% for blogs in blogs %}  
-        <h3><a href="{% url 'detail' blogs.id %}">{{ blogs.title}}</a></h13>
+        <h3><a href="{% url 'detail02' blogs.title %}">{{ blogs.title}}</a></h13>
         <p>{{blogs.pub_date}}</p>
         <p>{{blogs.body}}</p>
         <p>{{ blogs.user }}</p>
-        <p>{{blogs.age}}</p>
+        <p>{{ blogs.age }}</p>
         <hr>
     {% endfor %}
 {% endblock %}
